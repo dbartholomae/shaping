@@ -1,4 +1,6 @@
-export {}
+import { FileElement } from "./Element";
+
+export {};
 
 declare global {
   namespace JSX {
@@ -6,10 +8,7 @@ declare global {
       children: {}; // specify children name to use
     }
     interface IntrinsicElements {
-      shFile: {
-        name: string;
-        content: string;
-      }
+      shFile: FileElement["props"];
     }
   }
 }
