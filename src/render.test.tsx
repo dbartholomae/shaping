@@ -15,4 +15,19 @@ describe("render", () => {
 
     expect(await fs.readFile(fileName)).toStrictEqual(fileContent);
   });
+
+  it("parses the result of executing a component for a functional component", async () => {
+    const fs = new InMemoryFileSystem();
+
+    const fileName = "test.txt";
+    const fileContent = "Hello World!";
+
+    function Wrapper() {
+      return <file name={fileName} content={fileContent} />;
+    }
+
+    await render(<Wrapper />, { fs });
+
+    expect(await fs.readFile(fileName)).toStrictEqual(fileContent);
+  });
 });

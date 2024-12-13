@@ -1,1 +1,3 @@
-export type Node = Element | Iterable<Node> | null | undefined;
+import { Element } from "./Element";
+
+export type Node = Element | Array<Node> | null | undefined;

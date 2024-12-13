@@ -1,4 +1,5 @@
-import { Element, FileType } from "./Element";
+import { FileType } from "./Element";
+import { Node } from "./Node";
 import nodeFileSystem from "node:fs/promises";
 
 interface FileSystem {
@@ -6,10 +7,23 @@ interface FileSystem {
 }
 
 export async function render(
-  element: Element,
+  node: Node,
   { fs = nodeFileSystem }: { fs?: FileSystem } = {},
 ) {
-  if (element.type === FileType) {
-    await fs.writeFile(element.props.name, element.props.content);
+  if (!node) {
+    return;
+  }
+
+  if (Array.isArray(node)) {
+    return;
+  }
+
+  if (node.type === FileType) {
+    await fs.writeFile(node.props.name, node.props.content);
+    return;
+  }
+
+  if (typeof node.type === "function") {
+    return render(node.type(node.props), { fs });
   }
 }
