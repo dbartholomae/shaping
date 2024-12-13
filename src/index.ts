@@ -2,7 +2,7 @@ import { createElement } from "./createElement";
 export default createElement;
 export { Fragment } from "./Fragment";
 export { render } from "./render";
-import "./JSX";
+import "./jsx";
 
 export { TypeScriptProject } from "./components/TypeScriptProject";
 export { Prettier } from "./components/Prettier";
