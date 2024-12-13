@@ -11,7 +11,7 @@ describe("render", () => {
 
     const fileName = "test.txt";
     const fileContent = "Hello World!";
-    await render(<shFile name={fileName} content={fileContent} />, { fs });
+    await render(<file name={fileName} content={fileContent} />, { fs });
 
     expect(await fs.readFile(fileName)).toStrictEqual(fileContent);
   });

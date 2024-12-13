@@ -1,8 +1,8 @@
 import type { ElementConstructor } from "./ElementConstructor";
 
-export const ShFileType = "shFile" as const;
+export const FileType = "file" as const;
 
-export type Type = ElementConstructor<any> | typeof ShFileType;
+export type Type = ElementConstructor<any> | typeof FileType;
 
 export interface BaseElement<P = unknown, T extends Type = Type> {
   type: T;
@@ -11,7 +11,7 @@ export interface BaseElement<P = unknown, T extends Type = Type> {
 }
 
 export interface FileElement {
-  type: typeof ShFileType;
+  type: typeof FileType;
   props: {
     name: string;
     content: string;

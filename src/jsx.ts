@@ -8,7 +8,7 @@ declare global {
       children: {}; // specify children name to use
     }
     interface IntrinsicElements {
-      shFile: FileElement["props"];
+      file: FileElement["props"];
     }
   }
 }
