@@ -9,10 +9,10 @@ type JSONValue =
 
 export function JSONFile({
   name,
-  children,
+  content,
 }: {
   name: string;
-  children: JSONValue;
+  content: JSONValue;
 }) {
-  return <file name={name} content={JSON.stringify(children, null, 2)} />;
+  return <file name={name} content={JSON.stringify(content, null, 2)} />;
 }

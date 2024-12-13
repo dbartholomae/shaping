@@ -7,7 +7,7 @@ describe("JSONFile", () => {
     expect(
       JSONFile({
         name: "test.json",
-        children: {
+        content: {
           foo: "bar",
         },
       }),
