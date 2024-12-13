@@ -1,10 +1,14 @@
-import { Element } from "../Element";
+import { createElement } from "../createElement";
+import { JSONFile } from "./JSONFile";
 
 interface Props {
-  children: Element[] | Element;
   name: string;
 }
 
-export function TypeScriptProject({ children, name }: Props) {
-  return { type: "file", props: {}, key: null };
+function PackageJSON({ name }: { name: string }) {
+  return <JSONFile name="package.json" content={{ name }} />;
+}
+
+export function TypeScriptProject({ name }: Props) {
+  return <PackageJSON name={name} />;
 }
