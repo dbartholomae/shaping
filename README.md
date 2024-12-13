@@ -1,3 +1,5 @@
+# This project is still an experiment and neither published nor functional
+
 # shaping
 
 `shaping` allows you to both scaffold and update project files based on TypeScript files 
